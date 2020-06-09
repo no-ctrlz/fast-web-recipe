@@ -79,112 +79,24 @@
                        Simple comment box in jquery </a>코드 참고</span></p><br>
            <p>추가 예정의 내용들 : 코드펜 링크 리스트</p>
        </div>
-       <div class="commentbox-app">
-  <div class="container" style="background: aliceblue; margin-top: 50px;">
+<!-- 라이브리 시티 설치 코드 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC81MDQzMS8yNjkxOA==">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
 
-    <div class="clearfix">
-      <form id="comment-form">
-        <input type="text" id="comment-input" class="comment-input" placeholder="혼자만 알기 아쉬운 디자인 정보가 있으신가요? 여기에 링크를 남겨주세요!(아무말대잔치도 좋습니다)">
-        <input type="submit" value="Post" class="comment-btn">
-      </form>
-    </div>
-    
-    <ul style="list-style: none" id="comment-stream" class="comment-stream">
-<!-- dummy data:       <li>Hey! <span class="comment-remove">&times;</span></li>
-      <li>Just a thought <span href="" class="comment-remove">&times;</span></li> -->
-    </ul>
-    <button class="remove-all-btn" style="display: none" id="remove-all" type="button">Remove all</button>
-  </div>
-<!--  댓글기능-->
-  <script>
-    function hideWarning() {
-  document.getElementById('no_go').style.display = 'none';
-}
+       if (typeof LivereTower === 'function') { return; }
 
-function showWarning () {
-  document.getElementById('no_go').style.display = 'block';
-  document.getElementById('no_go').innerHTML = '<strong>Warning:</strong> App will not work if local storage is disabled or unsupported.';
-  console.warn('App will not work if local storage is disabled or unsupported.');
-} 
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
 
-function supportsLocalStorage () {
-  return typeof localStorage !== 'undefined';
-}
-
-function getComments() {
-  return JSON.parse(localStorage.getItem('comments')) || [];
-}
-
-function saveComment (comments, commentStr, action) {
-  if (!commentStr && comments.indexOf(commentStr) < 0) {
-    action(err);
-  }
-  
-  action(undefined, commentStr);
-  
-}
-
-function appendToStream(stream, str, index) {
-  var li = document.createElement('LI');
-  li.setAttribute('data-index', index);
-  li.innerHTML = str;
-  stream.appendChild(li);
-}
-
-function loadComments(stream) {
-  var comments = getComments();
-  if (comments) {
-    for (var i = 0; i < comments.length; i++) {
-      appendToStream(stream, comments[i], i);
-    }    
-  }
-}
-
-function clearComments(stream) {
-  localStorage.removeItem('comments');
-  stream.innerHTML = '';
-}
-
-if (supportsLocalStorage()) {
-  initApp();
-} else {
-  showWarning();
-}
-
-function initApp() {
-  hideWarning();
-  
-  var commentForm = document.getElementById('comment-form'),
-      commentList = document.getElementById('comment-stream'),
-      commentInput = document.getElementById('comment-input'),
-      removeAll = document.getElementById('remove-all');
- 
-  loadComments(commentList);
-  
-  removeAll.addEventListener('click', function() {
-    clearComments(commentList);
-  }, true);
-  
-  commentForm.addEventListener('submit', function (event) {
-    event.preventDefault();
-    var commStr = commentInput.value,
-        comments = getComments();
-    
-    saveComment(comments, commStr, function(err, value) {
-      
-      if (err) {
-        return;
-      }
-      
-      comments.push(value);
-      localStorage.setItem('comments', JSON.stringify(comments));  
-      appendToStream(commentList, commStr);
-      commentInput.value = '';      
-    });
-    
-  }, true);
-}</script>
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 라이브리 댓글 작성을 위해 JavaScript를 활성화 해주세요</noscript>
 </div>
+<!-- 시티 설치 코드 끝 -->
         <div class="contents">
             <section class="first">
                 <h2>피피티용 한글무료폰트 추천리스트</h2>
