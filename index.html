@@ -2,6 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <title>my fast recipe</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://indestructibletype.com/fonts/Bodoni/Bodoni.css" type="text/css" charset="utf-8" />
 <!--눈누에서 긁어옴-->
@@ -54,7 +55,7 @@
         .recommendtitle li:nth-child(5){font-family:'hhiFontBold';}
 /*-------------------------*/
         
-        .recommendParagraph {clear: both;}
+        .recommendParagraph {clear: both; }
         .recommendParagraph .custom-txt{width: 400px;}
         .recommendParagraph li{line-height: 1.6; font-size: 18px; float: left;}
         .recommendParagraph li:first-child{font-family: 'Noto Sans KR', sans-serif;}
@@ -69,6 +70,121 @@
 
 <body>
     <div class="wrap">
+       <div class="warning" id="no_go"></div>
+
+       <div class="updatememo" style="width: auto; height: 320px; padding: 50px 25px; background: aliceblue; margin-top: 80px; font-size: 14px;">
+          
+           <p>업데이트 일자: 2020년 06월 09일</p>
+           <p>추가 내용: <br><br>영문폰트 보도니 추가/ <span class="highlight" style="color: blueviolet; font-size: 12px;"><a href="https://codepen.io/mrs_snow/pen/vEvzaL">slideToggle</a> 기능 사용</span><br>상단에 임시 댓글 기능(삭제불가) 추가/ <span class="highlight" style="color: blueviolet; font-size: 12px;"><a href="https://codepen.io/humbl3man/pen/zqLbzN">CodePen Home
+                       Simple comment box in jquery </a>코드 참고</span></p><br>
+           <p>추가 예정의 내용들 : 코드펜 링크 리스트</p>
+       </div>
+       <div class="commentbox-app">
+  <div class="container" style="background: aliceblue; margin-top: 50px;">
+
+    <div class="clearfix">
+      <form id="comment-form">
+        <input type="text" id="comment-input" class="comment-input" placeholder="혼자만 알기 아쉬운 디자인 정보가 있으신가요? 여기에 링크를 남겨주세요!(아무말대잔치도 좋습니다)">
+        <input type="submit" value="Post" class="comment-btn">
+      </form>
+    </div>
+    
+    <ul style="list-style: none" id="comment-stream" class="comment-stream">
+<!-- dummy data:       <li>Hey! <span class="comment-remove">&times;</span></li>
+      <li>Just a thought <span href="" class="comment-remove">&times;</span></li> -->
+    </ul>
+    <button class="remove-all-btn" style="display: none" id="remove-all" type="button">Remove all</button>
+  </div>
+<!--  댓글기능-->
+  <script>
+    function hideWarning() {
+  document.getElementById('no_go').style.display = 'none';
+}
+
+function showWarning () {
+  document.getElementById('no_go').style.display = 'block';
+  document.getElementById('no_go').innerHTML = '<strong>Warning:</strong> App will not work if local storage is disabled or unsupported.';
+  console.warn('App will not work if local storage is disabled or unsupported.');
+} 
+
+function supportsLocalStorage () {
+  return typeof localStorage !== 'undefined';
+}
+
+function getComments() {
+  return JSON.parse(localStorage.getItem('comments')) || [];
+}
+
+function saveComment (comments, commentStr, action) {
+  if (!commentStr && comments.indexOf(commentStr) < 0) {
+    action(err);
+  }
+  
+  action(undefined, commentStr);
+  
+}
+
+function appendToStream(stream, str, index) {
+  var li = document.createElement('LI');
+  li.setAttribute('data-index', index);
+  li.innerHTML = str;
+  stream.appendChild(li);
+}
+
+function loadComments(stream) {
+  var comments = getComments();
+  if (comments) {
+    for (var i = 0; i < comments.length; i++) {
+      appendToStream(stream, comments[i], i);
+    }    
+  }
+}
+
+function clearComments(stream) {
+  localStorage.removeItem('comments');
+  stream.innerHTML = '';
+}
+
+if (supportsLocalStorage()) {
+  initApp();
+} else {
+  showWarning();
+}
+
+function initApp() {
+  hideWarning();
+  
+  var commentForm = document.getElementById('comment-form'),
+      commentList = document.getElementById('comment-stream'),
+      commentInput = document.getElementById('comment-input'),
+      removeAll = document.getElementById('remove-all');
+ 
+  loadComments(commentList);
+  
+  removeAll.addEventListener('click', function() {
+    clearComments(commentList);
+  }, true);
+  
+  commentForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+    var commStr = commentInput.value,
+        comments = getComments();
+    
+    saveComment(comments, commStr, function(err, value) {
+      
+      if (err) {
+        return;
+      }
+      
+      comments.push(value);
+      localStorage.setItem('comments', JSON.stringify(comments));  
+      appendToStream(commentList, commStr);
+      commentInput.value = '';      
+    });
+    
+  }, true);
+}</script>
+</div>
         <div class="contents">
             <section class="first">
                 <h2>피피티용 한글무료폰트 추천리스트</h2>
