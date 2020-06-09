@@ -2,20 +2,73 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-<!-- freenom 도메인 생성(12개월) 20200526~20210526  -->
-<!--무료도메인 생성시도시 not available 오류가 난다면 .tk/.ml/.ga/.cf/.gq 마지막 최상위 도메인까지 입력해보자-->
+    <link rel="stylesheet" href="https://indestructibletype.com/fonts/Bodoni/Bodoni.css" type="text/css" charset="utf-8" />
 <!--눈누에서 긁어옴-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" samesite="none">
-    <link rel="stylesheet" href="style.css">
-<!--직접 커스텀한 style.css가 마지막에 적용되도록 오픈소스css파일 아래에 놓는다.-->
     <script src="js/application-b4d665efa0f59421c8e2b51965768c0954a82350ad691bf2ac3b.js"></script>
 <!--눈누에서 긁어옴-->
+    <style>
+/*reset*/
+        html,body{margin: 0; padding: 0; font-family: 'Noto Sans KR', sans-serif; background-color:blanchedalmond;}
+        h2{font-size: 42px;}
+        h3{font-size: 24px; font-weight: 700;}
+        .wrap{margin: 0 auto; width: 1400px; height: 100%; background:url(
+        nosibal-keepgoing.png)no-repeat 100% 100%/50% 30%;}
+        section{width: 100%; height: 100vh; position: relative;}
+        .second{margin-top: 80px;}
+        .text-box{width: 33%; height: 50px; margin-bottom: 30px;}
+        .text-box textarea{height: 50px;}
+        button{width: 120px; font-size: 12px; font-family: 'Noto Sans KR', sans-serif; margin-left: 15px;}
+/*-----------------------*/
+        span{color: rgb(0, 131, 142); font-size: 18px;}
+        li{list-style: none;}
+        @font-face {
+            font-family:'DWImpactamin';
+            src:url(txt/DWImpactamin/DWImpactamin.ttf) format('truetype');
+            
+        }
+        @font-face {
+            font-family:'GmarketSansTTFMedium';
+            src:url(txt/GmarketSansTTF/GmarketSansTTFMedium.ttf) format('truetype');
+        }        
+        @font-face {
+            font-family:'Jalnan';
+            src:url(txt/Jalnan.ttf) format('truetype');
+        }
+        @font-face {
+            font-family:'Ssangmun-dong_b';
+            src:url(txt/Ssangmun-dong_b.ttf) format('truetype');
+        }        
+        @font-face {
+            font-family:'hhiFontBold';
+            src:url(txt/hhiFonts/hhiFontBold.ttf) format('truetype');
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+        .recommendtitle .custom-txt{width: 400px;}
+        .recommendtitle li{ width: 500px;line-height: 1.6; font-size: 24px; float: left;}
+        .recommendtitle li:first-child{font-family:'DWImpactamin'; }
+        .recommendtitle li:nth-child(2){font-family:'GmarketSansTTFMedium'; }
+        .recommendtitle li:nth-child(3){font-family:'Jalnan';}
+        .recommendtitle li:nth-child(4){font-family:'Ssangmun-dong_b';}
+        .recommendtitle li:nth-child(5){font-family:'hhiFontBold';}
+/*-------------------------*/
+        
+        .recommendParagraph {clear: both;}
+        .recommendParagraph .custom-txt{width: 400px;}
+        .recommendParagraph li{line-height: 1.6; font-size: 18px; float: left;}
+        .recommendParagraph li:first-child{font-family: 'Noto Sans KR', sans-serif;}
+/*-----------------------------*/
+        .faqanswer{font-family:'Noto Sans KR' ; display: none; width: 680px;	background: #e5e5e5; padding: 12px 20px 20px 30px;	 box-sizing: border-box;}
+        .recommendEng{clear: both; font-family: 'Bodoni 11';}
+        .recommendEng .custom-txt{font-size: 36px;}
+
+        
+    </style>
 </head>
+
 <body>
-<!--   원격저장소로 내보낼때 윈도우체제에서는 [push]기능을 쓴다/ 퍼블리싱기능과 같은것임-->
-     <div class="wrap">
+    <div class="wrap">
         <div class="contents">
             <section class="first">
                 <h2>피피티용 한글무료폰트 추천리스트</h2>
@@ -67,6 +120,32 @@
                             </div>
                         </li>
                     </ul>
+                </div>                
+                <div class="recommendEng">
+                    <h3>영문폰트 <span>#타이포그래피</span></h3>
+                    <ul>
+                        <li>Bodoni * by indestructible type*<br>
+                            <a href="#" class="togglefaq"><i class="icon-plus"></i> 웹폰트 사용방법</a>
+                            <div class="faqanswer">
+                                <p>아래의 css 링크 head에 붙이고 <br> css에 <span>font-family: 'Bodoni 11';</span> 붙이기</p>
+                            <span class="selectable" id="selectable1" onclick="selectText(&quot;selectable1&quot;)">&lt;link rel="stylesheet" href="https://indestructibletype.com/fonts/Bodoni/Bodoni.css" type="text/css" charset="utf-8" /&gt;</span>
+                            </div>
+                            <script>
+                                $('.togglefaq').click(function(e) {
+                                    e.preventDefault();
+                                    var notthis = $('.active').not(this);
+                                    notthis.find('.icon-minus').addClass('icon-plus').removeClass('icon-minus');
+                                    notthis.toggleClass('active').next('.faqanswer').slideToggle(300);
+                                    $(this).toggleClass('active').next().slideToggle("fast");
+                                    $(this).children('i').toggleClass('icon-plus icon-minus');
+                                });
+                            </script> 
+                            <a href="https://github.com/indestructible-type/Bodoni"><button>깃허브에서 다운로드</button></a>
+                            <div class="text-box">
+                                <textarea spellcheck="false" lang="en" name="editor" id="editor_419" class="custom-txt" placeholder="BASIC AND STYLISH"></textarea>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </section>
             <section class="second">
@@ -104,6 +183,6 @@
                 </div>
             </section>
             </div>
-            </div>
+    </div>
 </body>
 </html>
