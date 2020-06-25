@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>my fast recipe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://indestructibletype.com/fonts/Bodoni/Bodoni.css" type="text/css" charset="utf-8" />
+<!--눈누에서 긁어옴-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" samesite="none">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/application-b4d665efa0f59421c8e2b51965768c0954a82350ad691bf2ac3b.js"></script>
+<!--눈누에서 긁어옴-->
+    <style>
+/*reset*/
+        a:hover{cursor: pointer;}
+        html,body{margin: 0; padding: 0; font-family: 'Noto Sans KR', sans-serif; background-color:blanchedalmond;}
+        h2{font-size: 42px;}
+        h3{font-size: 24px; font-weight: 700;}
+        .wrap{margin: 0 auto; width: 1400px; height: 100%;}
+        section{width: 100%; height: 100vh; position: relative; }
+        .all_fonts{position: fixed; bottom: 10%; right: 1%; width: 400px; font-size: 28px}
+        .text-box{width: 33%; height: 50px; margin-bottom: 30px;}
+        .text-box textarea{height: 50px;}
+        button{width: 120px; font-size: 12px; font-family: 'Noto Sans KR', sans-serif; margin-left: 15px;}
+/*-----------------------*/
+        span{color: rgb(0, 131, 142); font-size: 18px;}
+        li{list-style: none;}
+/*-------------------폰트추가하는곳----------------*/
+        @font-face {
+            font-family:'DWImpactamin';
+            src:url(txt/DWImpactamin/DWImpactamin.ttf) format('truetype');
+        }
+        @font-face {
+            font-family:'GmarketSansTTFMedium';
+            src:url(txt/GmarketSansTTF/GmarketSansTTFMedium.ttf) format('truetype');
+        }        
+        @font-face {
+            font-family:'Jalnan';
+            src:url(txt/Jalnan.ttf) format('truetype');
+        }
+        @font-face {
+            font-family:'Ssangmun-dong_b';
+            src:url(txt/Ssangmun-dong_b.ttf) format('truetype');
+        }        
+        @font-face {
+            font-family:'hhiFontBold';
+            src:url(txt/hhiFonts/hhiFontBold.ttf) format('truetype');
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+        .recommendtitle .custom-txt{width: 400px;}
+        .recommendtitle li{ width: 500px;line-height: 1.6; font-size: 24px; float: left;}
+        .recommendtitle li:first-child{font-family:'DWImpactamin'; }
+        .recommendtitle li:nth-child(2){font-family:'GmarketSansTTFMedium'; }
+        .recommendtitle li:nth-child(3){font-family:'Jalnan';}
+        .recommendtitle li:nth-child(4){font-family:'Ssangmun-dong_b';}
+        .recommendtitle li:nth-child(5){font-family:'hhiFontBold';}
+/*-------------------------*/
+        
+        .recommendParagraph {clear: both; }
+        .recommendParagraph .custom-txt{width: 400px;}
+        .recommendParagraph li{line-height: 1.6; font-size: 18px; float: left;}
+        .recommendParagraph li:first-child{font-family: 'Noto Sans KR', sans-serif;}
+/*-----------------------------*/
+        .faqanswer{font-family:'Noto Sans KR' ; display: none; width: 680px;	background: #e5e5e5; padding: 12px 20px 20px 30px;	 box-sizing: border-box;}
+        .recommendEng{clear: both; font-family: 'Bodoni 11';}
+        .recommendEng .custom-txt{font-size: 36px;}
+
+/*        ---------------------------*/
+        .tabMenu{width: 1000px; margin: 50px auto; position: relative;}
+        /*상단클릭메뉴*/
+        .tabMenu .list{overflow: hidden;}
+        .tabMenu .list li {float: left; width: 25%; height: 50px; line-height: 50px; box-sizing: border-box; border-bottom: 1px solid #999; background: #fff;}
+        .tabMenu .list li.on{border: 1px solid #999; border-bottom-color: transparent;}
+        .tabMenu .list li a{display: block; width: 100%; height: 100%; text-align: center;}
+
+        /*탭내부박스*/
+        .tabMenu .box{ background: #fff; width: 100%; height:100vh; overflow-y:scroll; padding: 30px 20px; box-sizing: border-box;  display: none;}
+        .tabMenu .box.on{display: block;}
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+       <div class="updatememo" style="width: auto; height: 320px; padding: 50px 25px; background: aliceblue; margin-top: 80px; font-size: 14px; color:#222;">
+          
+           <p class="date" style="color: #999;"><p class="date" style="color: #999;">업데이트 일자: 2020년 06월 22일</p>
+           <p>추가 내용: <br><br> -3번탭(유용한것들)아이콘 및 무료이미지 항목, 텍스트 홀로그램 효과 추가 <br>- 4번탭(etc) 아트스테이션 각두상 3d 모델링+조명 시뮬레이션 소스파일 추가 <br></p>
+           <p>추가 예정의 내용들 : <br><br>코드펜 링크 리스트 <br> 무료 음원 채널 리스트</p>
+           <p>*7월 이내로 anotherworld 디렉토리는 폐기할 것</p>
+       </div>
+               <div id="lv-container" data-id="city" data-uid="MTAyMC81MDQzMS8yNjkxOA==">
+                   <script type="text/javascript">
+                       (function(d, s) {
+                           var j, e = d.getElementsByTagName(s)[0];
+
+                           if (typeof LivereTower === 'function') {
+                               return;
+                           }
+
+                           j = d.createElement(s);
+                           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                           j.async = true;
+
+                           e.parentNode.insertBefore(j, e);
+                       })(document, 'script');
+                   </script>
+<!--<noscript> 라이브리 댓글 작성을 위해 JavaScript를 활성화 해주세요</noscript>-->
+</div>
+<!-- 라이브리 시티 설치 코드 -->
+<!-- 시티 설치 코드 끝 -->
+        <div class="contents">
+            <div class="tabMenu">
+               <ul class="list">
+                   <li class="on"><a target="_self">디자인폰트추천</a></li>
+                   <li><a target="_self">비주얼 소스</a></li>
+                   <li><a target="_self">웹사이트 만들때 유용한 것들</a></li>
+                   <li><a target="_self">etc</a></li>
+               </ul>
+               <section class="box on">
+                    <h2>피피티용 한글무료폰트 추천리스트</h2>
+
+                    <div class="text-box">
+                        <textarea class="all_fonts" type="text" placeholder="모든 폰트에 적용됩니다. 이 상자에 문구를 입력해보세요."></textarea>
+                        <!--<textarea lang="ko" name="editor" id="editor" class="custom-txt" placeholder="아무말아무말아무말"></textarea>-->
+                    </div>
+                    <div class="recommendtitle">
+                        <h3>타이틀추천 <span>#강단있는</span></h3>
+                        <ul>
+                            <li>DW임팩타민체 <a href="http://impactamin.kr/fontsite/index"><button>다운로드 바로가기</button></a>
+                                <div class="text-box">
+                                    <textarea spellcheck="false" lang="ko" name="editor" id="editor_419" class="custom-txt" placeholder="임팩트 있는 비타민!"></textarea>
+                                    <!--custom-txt 클래스와 application...스크립트가 연동되어있음-->
+                                </div>
+                            </li>
+                            <li>지마켓산스 <a href="http://company.gmarket.co.kr/company/about/company/company--font.asp"><button>다운로드 바로가기</button></a>
+                                <div class="text-box">
+                                    <textarea spellcheck="false" lang="ko" name="editor" id="editor_419" class="custom-txt" placeholder="산뜻하지만 확실하게."></textarea>
+                                </div>
+                            </li>
+                            <li>여기어때 잘난체 <a href="https://www.goodchoice.kr/font"><button>다운로드 바로가기</button></a>
+                                <div class="text-box">
+                                    <textarea spellcheck="false" lang="ko" name="editor" id="editor_419" class="custom-txt" placeholder="잘난척은 찐 실력에서 나온다."></textarea>
+                                </div>
+                            </li>
+                            <li>타이포 쌍문동 bold <a href="https://software.naver.com/software/summary.nhn?softwareId=GWS_001710&categoryId=I0300000"><button>다운로드 바로가기</button></a>
+                                <div class="text-box">
+                                    <textarea spellcheck="false" lang="ko" name="editor" id="editor_419" class="custom-txt" placeholder="쌍문동 살았던 친구가 ppt에 쓰길래 나도 함 써봄"></textarea>
+                                </div>
+                            </li>
+                            <li>현대체 bold <a href="https://software.naver.com/software/summary.nhn?softwareId=GWS_001710&categoryId=I0300000"><button>다운로드 바로가기</button></a>
+                                <div class="text-box">
+                                    <textarea spellcheck="false" lang="ko" name="editor" id="editor_419" class="custom-txt" placeholder="임팩타민 폰트랑 비슷한데 약간 예의차린 느낌"></textarea>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="recommendParagraph">
+                        <h3>문단 추천 <span>#가독성</span></h3>
+                        <ul>
+                            <li>Noto Sans KR Regular 400<a href="https://fonts.google.com/specimen/Noto+Sans+KR?sidebar.open&selection.family=Noto+Sans+KR"><button>웹폰트받으러가기</button></a>
+                                <div class="text-box">
+                                    <textarea spellcheck="false" lang="ko" name="editor" id="editor_419" class="custom-txt" placeholder="가독성 좋고 무난한 디폴트체"></textarea>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="recommendEng">
+                        <h3>영문폰트 <span>#타이포그래피</span></h3>
+                        <ul>
+                            <li>Bodoni * by indestructible type*<br>
+                                <a href="#" class="togglefaq"><i class="icon-plus"></i> 웹폰트 사용방법</a>
+                                <div class="faqanswer">
+                                    <p>아래의 css 링크 head에 붙이고 <br> css에 <span>font-family: 'Bodoni 11';</span> 붙이기</p>
+                                    <span class="selectable" id="selectable1" onclick="selectText(&quot;selectable1&quot;)">&lt;link rel="stylesheet" href="https://indestructibletype.com/fonts/Bodoni/Bodoni.css" type="text/css" charset="utf-8" /&gt;</span>
+                                </div>
+                                <script>
+                                    $('.togglefaq').click(function(e) {
+                                        e.preventDefault();
+                                        var notthis = $('.active').not(this);
+                                        notthis.find('.icon-minus').addClass('icon-plus').removeClass('icon-minus');
+                                        notthis.toggleClass('active').next('.faqanswer').slideToggle(300);
+                                        $(this).toggleClass('active').next().slideToggle("fast");
+                                        $(this).children('i').toggleClass('icon-plus icon-minus');
+                                    });
+                                </script>
+                                <a href="https://github.com/indestructible-type/Bodoni"><button>깃허브에서 다운로드</button></a>
+                                <div class="text-box">
+                                    <textarea spellcheck="false" lang="en" name="editor" id="editor_419" class="custom-txt" placeholder="BASIC AND STYLISH"></textarea>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="box">
+                    <h2 class="title2">기타등등 쓸모많은 비주얼소스</h2>
+                    <div class="etcVisual">
+                        <h3>프리미어 및 에펙 뒷배경 영상 소스 <span>#약 30-60초</span></h3>
+                        <ul>
+                            <li>VIDEEZY "outer-space"<a href="https://www.videezy.com/free-video/outer-space"><button>소스파밍하러가기</button></a></li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="box">
+                    <h2>웹디자인 작업시 유용한 사이트<span>#시간단축甲</span></h2>
+                    <div class="usefulsite">
+                        <h3>자료 수집</h3>
+                        <ul>
+                            <li>웹사이트들의 과거 ui를 보여주는 아카이빙 사이트<a href="https://archive.org/web/"><button>사이트 바로가기</button></a></li>
+                        </ul>
+                        <h3>아이콘 및 무료이미지</h3>
+                        <ul>
+                            <li>무료 픽토그램 flaticon<a href="https://www.flaticon.com/"><button>사이트 바로가기</button></a></li>
+                            <li>pixabay 저작권걱정없는 고해상도 이미지<a href="https://pixabay.com/ko/"><button>사이트 바로가기</button></a></li>
+                        </ul>
+                        <h3>각종 컨버터 사이트</h3>
+                        <ul>
+                            <li>ttf파일 웹폰트형식으로 전환해주는 사이트<a href="https://onlinefontconverter.com/"><button>사이트 바로가기</button></a></li>
+                            <li>png > svg<a href="https://picsvg.com/"><button>사이트 바로가기</button></a></li>
+                            <li>이미지 배경 투명화 사이트<a href="https://www.remove.bg/ko/upload"><button>사이트 바로가기</button></a></li>
+                            <li>커서 커스텀<a href="https://www.cursor.cc/"><button>사이트 바로가기</button></a></li>
+                        </ul>
+                        <h3>색상 관련</h3>
+                        <ul>
+                            <li>svg 색상 픽커<a href="https://codepen.io/sosuke/pen/Pjoqqp"><button>코드펜 바로가기</button></a></li>
+                            <li>색조합을 도와주는 컬러파레트(어도비 제공)<a href="https://color.adobe.com/ko/create/color-wheel"><button>사이트 바로가기</button></a></li>
+                        </ul>
+                        <h3>스크립트 관련</h3>
+                        <ul>
+                            <li>loading.css : 버튼에 마우스 오버시 로딩애니메이션 나타나게 커스텀<a href="https://loading.io/button/ "><button>사이트 바로가기</button></a></li>
+                            <li>css hologram effect : 텍스트 홀로그램 효과<a href="https://codepen.io/sooooooo/pen/zVOGmb "><button>코드펜 바로가기</button></a></li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="box">
+                    <h2>etc</h2>
+                    <p>etc_아트스테이션_각두상3d모델링</p>
+                    <iframe width="640" height="360" src="https://www.artstation.com/embed/22115435" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel="" scrolling="no"> </iframe>
+                </section>
+
+            </div>
+        </div>
+    </div>
+            <script>
+        $(function(){
+        $('.tabMenu .list li a').on('click', function(){
+            var num = $('.tabMenu .list li a').index($(this)); //.tabMenu .list li a의 인덱스번호를 (num)에 저장 ->.index($(this));는 클릭한 리스트 자신
+            
+            $('.tabMenu .box').removeClass('on'); //모든탭 닫음
+            $('.tabMenu .box:eq('+ num +')').addClass('on');
+            $('.tabMenu .list li').removeClass('on'); //모든 li의 테두리변경
+            $(this).parent().addClass('on'); //.tabMenu .list li a 부모인 li에 on 클래스 부여 (해당 탭의 테두리 변경)
+        });
+    });
+    </script>
+</body>
+</html>
